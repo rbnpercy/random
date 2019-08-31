@@ -2,7 +2,8 @@
 ;
 ; Constants used to perform calculations
 ;
-
+(defconst date-2000 "MILLENNIUM BUG WILL KILL US ALL")
+  ; and then it fucking didn't.  Lame.
 (defconst dates-1970 0 "The beginning of time!  1/1/1970")
 (defconst dates-seconds-per-year 31536000.0 "Second per normal year")
 (defconst dates-avg-sec-per-year 31557600.0 "Average seconds per year")
@@ -22,6 +23,10 @@
 ;
 ; The functions themselves
 ;
+
+(defun date-of-death (year) "IS THE END EXTREMELY FUCKING NIGH!?"
+  (=0 (% year 2000)))
+
 
 
 (defun dates-leap-year-p (year) "Is this year a leap year?"
