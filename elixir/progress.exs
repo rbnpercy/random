@@ -1,7 +1,7 @@
 defmodule Progress do
 
   @rounding_precision 2
-  @progress_bar_width 100  # Percentage of Terminal window's width
+  @progress_bar_width 75  # Percentage of Terminal window's width
   @complete_character "█"  # Unicode Character 'FULL BLOCK' (U+2588)
   @incomplete_character "░"  # Unicode Character 'LIGHT SHADE' (U+2591)
 
@@ -20,9 +20,9 @@ defmodule Progress do
   end
 end
 
-total = 100
+total = 50
 Enum.each(1..total, fn task ->
   IO.write("\r#{Progress.bar(task, total)}")
-  Process.sleep(50)
+  Process.sleep(10)
 end)
 IO.write("\n")
